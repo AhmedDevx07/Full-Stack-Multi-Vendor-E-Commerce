@@ -51,7 +51,7 @@ export default function AuthPage() {
   return (
     <div className="min-h-screen bg-gray-50/30 flex items-center justify-center p-6 antialiased font-sans">
       <div className="w-full max-w-md bg-white border border-gray-100 rounded-3xl p-8 shadow-sm space-y-6">
-        
+
         {/* Back to Home Button */}
         <div>
           <Link href="/" className="text-xs font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-1 transition">

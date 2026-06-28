@@ -1,5 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import Product from "@/models/Product";
+import User from "@/models/User";
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 

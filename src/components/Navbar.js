@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <div className="w-full sticky top-0 z-50 px-4 pt-4 bg-transparent backdrop-blur-sm">
       <header className="bg-white/75 backdrop-blur-xl border border-gray-100/80 px-6 py-3.5 max-w-7xl mx-auto rounded-2xl shadow-sm flex justify-between items-center transition-all duration-300">
-        
+
         {/* 🌟 Branding Logo */}
         <Link href="/" className="text-xl font-black tracking-tight text-indigo-600 flex items-center gap-1 hover:opacity-90 transition">
           E-MARKET<span className="text-gray-900 font-medium">X</span>
@@ -23,7 +23,7 @@ export default function Navbar() {
           <Link href="/products" className="hover:text-indigo-600 transition-colors duration-200">Shop</Link>
           <Link href="/about" className="hover:text-indigo-600 transition-colors duration-200">About</Link>
           <Link href="/contact" className="hover:text-indigo-600 transition-colors duration-200">Contact</Link>
-          
+
           {/* Portals access indicators inside default viewport context */}
           {user?.role === "vendor" && (
             <Link href="/vendor" className="text-indigo-600 hover:text-indigo-700 bg-indigo-50/60 px-2.5 py-1 rounded-lg text-[11px]">
@@ -39,9 +39,9 @@ export default function Navbar() {
 
         {/* ⚡ Right Actions Array */}
         <div className="flex items-center gap-5">
-          
+
           {/* 🛒 Clean Shopping Cart Link & Counter */}
-          <Link 
+          <Link
             href="/cart"
             className="relative p-2.5 text-gray-600 hover:text-indigo-600 hover:bg-gray-50 rounded-xl transition duration-200 block"
           >
@@ -62,16 +62,16 @@ export default function Navbar() {
                 <span className="text-[11px] text-gray-400 font-medium block leading-none">Logged in as</span>
                 <span className="text-xs font-bold text-gray-800 tracking-tight mt-0.5">{user.name}</span>
               </div>
-              <button 
-                onClick={logout} 
+              <button
+                onClick={logout}
                 className="text-xs font-bold text-rose-600 bg-rose-50 hover:bg-rose-100/80 px-3.5 py-2 rounded-xl transition duration-150"
               >
                 Logout
               </button>
             </div>
           ) : (
-            <Link 
-              href="/login" 
+            <Link
+              href="/login"
               className="text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-700 px-5 py-2.5 rounded-xl transition shadow-sm tracking-wide"
             >
               Sign In

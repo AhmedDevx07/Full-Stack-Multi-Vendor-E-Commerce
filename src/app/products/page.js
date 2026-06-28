@@ -19,7 +19,7 @@ export default function ShopPage() {
         if (res.ok) {
           setProducts(data);
           setFilteredProducts(data);
-          
+
           // Dynamic category extraction node
           const uniqueCategories = ["All", ...new Set(data.map(p => p.category).filter(Boolean))];
           setCategories(uniqueCategories);
@@ -42,8 +42,8 @@ export default function ShopPage() {
     }
 
     if (searchQuery.trim() !== "") {
-      result = result.filter(p => 
-        p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      result = result.filter(p =>
+        p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.description?.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
@@ -53,7 +53,7 @@ export default function ShopPage() {
 
   return (
     <div className="bg-gray-50/30 min-h-screen font-sans antialiased text-gray-800">
-      
+
       {/* 🏙️ HEADER NODE */}
       <div className="max-w-7xl mx-auto px-6 pt-10 pb-6 border-b border-gray-100">
         <span className="text-[10px] bg-indigo-50 text-indigo-600 font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">
@@ -69,21 +69,21 @@ export default function ShopPage() {
 
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
-          
+
           {/* 🛠️ LEFT SIDEBAR: CONTROL STATION FILTER PANEL */}
           <aside className="bg-white border border-gray-100 p-6 rounded-3xl shadow-sm sticky top-24 space-y-6">
-            
+
             {/* Search Input Control */}
             <div>
               <label className="block text-[10px] font-black uppercase tracking-wider text-gray-400 mb-2">
                 Search Catalog
               </label>
               <div className="relative">
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Filter by keyword..." 
+                  placeholder="Filter by keyword..."
                   className="w-full text-xs font-medium bg-gray-50 border border-gray-100 rounded-xl pl-4 pr-10 py-3 focus:outline-none focus:border-indigo-500 focus:bg-white transition"
                 />
                 <span className="absolute right-3.5 top-3.5 text-gray-400 text-xs">🔍</span>
@@ -100,11 +100,10 @@ export default function ShopPage() {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide transition-all duration-150 capitalize flex items-center justify-between group ${
-                      selectedCategory === category
+                    className={`w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide transition-all duration-150 capitalize flex items-center justify-between group ${selectedCategory === category
                         ? "bg-indigo-600 text-white shadow-sm"
                         : "bg-transparent text-gray-500 hover:bg-gray-50 hover:text-gray-900"
-                    }`}
+                      }`}
                   >
                     <span>{category}</span>
                     {selectedCategory !== category && (
@@ -121,7 +120,7 @@ export default function ShopPage() {
 
           {/* 📦 RIGHT CONTENT LAYOUT: ACTIVE LISTINGS STREAM */}
           <main className="lg:col-span-3">
-            
+
             <div className="flex justify-between items-center mb-6">
               <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
                 Telemetry Output: {filteredProducts.length} Listings Loaded
