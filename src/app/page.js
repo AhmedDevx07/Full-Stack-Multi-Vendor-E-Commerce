@@ -25,11 +25,10 @@ export default function HomePage() {
 
   // Filter systems according to your blueprint
   const latestProducts = products.slice(0, 4);
-  const bestSellingProducts = products.filter(p => p.stock < 50).slice(0, 4); // Simulated best sellers
+  const bestSellingProducts = products.filter((p) => p.stock < 50).slice(0, 4); // Simulated best sellers
 
   return (
     <div className="text-gray-800 bg-gray-50/30 min-h-screen font-sans antialiased">
-      
       {/* 🚀 1. ULTRA-MODERN HERO BANNER */}
       <section className="max-w-7xl mx-auto px-6 pt-8 pb-6">
         <div className="bg-gradient-to-br from-slate-900 via-indigo-950 to-indigo-900 rounded-3xl p-8 md:p-16 shadow-xl text-white relative overflow-hidden border border-slate-800">
@@ -46,46 +45,23 @@ export default function HomePage() {
               Discover Products From Top Independent Sellers.
             </h1>
             <p className="mt-4 text-xs md:text-sm text-slate-300 max-w-md font-medium leading-relaxed">
-              Shop high-quality, verified telemetry items directly from independent merchants globally with transparent decentralized pipeline tracking.
+              Shop high-quality, verified telemetry items directly from
+              independent merchants globally with transparent decentralized
+              pipeline tracking.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link href="/products" className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-6 py-3.5 rounded-xl shadow-md transition duration-200 tracking-wide uppercase">
+              <Link
+                href="/products"
+                className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-6 py-3.5 rounded-xl shadow-md transition duration-200 tracking-wide uppercase"
+              >
                 Explore Marketplace
               </Link>
-              <Link href="/about" className="bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-xs px-6 py-3.5 rounded-xl transition duration-200 tracking-wide uppercase backdrop-blur-sm">
+              <Link
+                href="/about"
+                className="bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-xs px-6 py-3.5 rounded-xl transition duration-200 tracking-wide uppercase backdrop-blur-sm"
+              >
                 Learn More
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 📊 2. BENTO GRID: OUR SPECIFICATIONS */}
-      <section className="max-w-7xl mx-auto px-6 py-10">
-        <div className="mb-6">
-          <h2 className="text-xs font-bold text-indigo-600 uppercase tracking-widest">Why E-MarketX?</h2>
-          <p className="text-lg font-black text-gray-900 tracking-tight mt-0.5">Engineered for Premium Transactions</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {/* Box 1 */}
-          <div className="bg-white border border-gray-100 p-6 rounded-3xl shadow-sm md:col-span-2 flex flex-col justify-between group hover:border-indigo-100 transition duration-300">
-            <div>
-              <div className="bg-indigo-50 text-indigo-600 h-10 w-10 rounded-xl flex items-center justify-center font-bold mb-4 text-sm">🛡️</div>
-              <h3 className="font-extrabold text-gray-900 text-base tracking-tight">Verified Merchant Telemetry</h3>
-              <p className="text-xs text-gray-400 mt-1.5 max-w-md font-medium leading-relaxed">
-                Every single item uploaded undergo strict security validation nodes. Scrambled asset lists or fraud metrics are permanently blocked at administration level.
-              </p>
-            </div>
-          </div>
-          {/* Box 2 */}
-          <div className="bg-white border border-gray-100 p-6 rounded-3xl shadow-sm flex flex-col justify-between group hover:border-indigo-100 transition duration-300">
-            <div>
-              <div className="bg-emerald-50 text-emerald-600 h-10 w-10 rounded-xl flex items-center justify-center font-bold mb-4 text-sm">⚡</div>
-              <h3 className="font-extrabold text-gray-900 text-base tracking-tight">Instant Node Despatch</h3>
-              <p className="text-xs text-gray-400 mt-1.5 font-medium leading-relaxed">
-                Direct vendor notification engine optimizes processing workflows.
-              </p>
             </div>
           </div>
         </div>
@@ -95,21 +71,35 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex justify-between items-end mb-6 border-b border-gray-100 pb-4">
           <div>
-            <h2 className="text-xl font-black text-gray-900 tracking-tight">Latest Inclusions</h2>
-            <p className="text-xs text-gray-400 font-medium mt-0.5">Freshly uploaded assets into the global feed grid matrix</p>
+            <h2 className="text-xl font-black text-gray-900 tracking-tight">
+              Latest Inclusions
+            </h2>
+            <p className="text-xs text-gray-400 font-medium mt-0.5">
+              Freshly uploaded assets into the global feed grid matrix
+            </p>
           </div>
-          <Link href="/products" className="text-xs font-bold text-indigo-600 hover:text-indigo-700 transition">View All →</Link>
+          <Link
+            href="/products"
+            className="text-xs font-bold text-indigo-600 hover:text-indigo-700 transition"
+          >
+            View All →
+          </Link>
         </div>
 
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="animate-pulse bg-white rounded-2xl h-72 border border-gray-100"></div>
+              <div
+                key={i}
+                className="animate-pulse bg-white rounded-2xl h-72 border border-gray-100"
+              ></div>
             ))}
           </div>
         ) : latestProducts.length === 0 ? (
           <div className="text-center py-12 bg-white border border-gray-100 rounded-2xl">
-            <p className="text-gray-400 text-xs font-medium">No active listings inside cluster node.</p>
+            <p className="text-gray-400 text-xs font-medium">
+              No active listings inside cluster node.
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -124,20 +114,29 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-6 py-8 mb-12">
         <div className="flex justify-between items-end mb-6 border-b border-gray-100 pb-4">
           <div>
-            <h2 className="text-xl font-black text-gray-900 tracking-tight">Best Selling Marketplace Feeds</h2>
-            <p className="text-xs text-gray-400 font-medium mt-0.5">Highest order transaction velocity records this week</p>
+            <h2 className="text-xl font-black text-gray-900 tracking-tight">
+              Best Selling Marketplace Feeds
+            </h2>
+            <p className="text-xs text-gray-400 font-medium mt-0.5">
+              Highest order transaction velocity records this week
+            </p>
           </div>
         </div>
 
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[...Array(4)].map((_, i) => (
-              <div key={i} className="animate-pulse bg-white rounded-2xl h-72 border border-gray-100"></div>
+              <div
+                key={i}
+                className="animate-pulse bg-white rounded-2xl h-72 border border-gray-100"
+              ></div>
             ))}
           </div>
         ) : bestSellingProducts.length === 0 ? (
           <div className="text-center py-12 bg-white border border-gray-100 rounded-2xl">
-            <p className="text-gray-400 text-xs font-medium">No trending data points available yet.</p>
+            <p className="text-gray-400 text-xs font-medium">
+              No trending data points available yet.
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -147,7 +146,6 @@ export default function HomePage() {
           </div>
         )}
       </section>
-
     </div>
   );
 }
